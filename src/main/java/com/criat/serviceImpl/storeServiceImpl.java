@@ -57,8 +57,15 @@ public class storeServiceImpl implements StoreService {
 	}
 
 	@Override
-	public void deleteByStoreId(int storeId) {
-          storeRepo.deleteById(storeId);
+	public ResponsDto deleteByStoreId(int storeId) {
+        
+		ResponsDto response = new ResponsDto();
+		
+		response.setResponseMsg("deleted required storeId");
+		response.setResult("Success");
+		
+		
+		return response;
 		
 	}
 

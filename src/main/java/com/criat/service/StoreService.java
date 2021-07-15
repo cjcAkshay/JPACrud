@@ -1,6 +1,6 @@
 package com.criat.service;
 
-import java.util.List;
+
 
 import com.criat.dto.ResponsDto;
 import com.criat.model.Store;
@@ -17,5 +17,5 @@ public interface StoreService {
 	
 	public Store updateByStoreId(Store store);
 	
-	public void deleteByStoreId(int storeId);
+	public ResponsDto deleteByStoreId(int storeId);
 }

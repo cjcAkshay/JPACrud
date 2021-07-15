@@ -37,7 +37,7 @@ public class StoreController {
 	{
 		ResponsDto response=storeSer.getAllStoreDetails();
 		
-		return new ResponseEntity<ResponsDto>(response,HttpStatus.BAD_REQUEST);
+		return new ResponseEntity<ResponsDto>(response,HttpStatus.OK);
 	}
 	
 	@PostMapping("/add")
@@ -69,12 +69,20 @@ public class StoreController {
 		
 	}
 	
-	@DeleteMapping("/{storeId}")
-	public void deleteById(@PathVariable int storeId)
-	{
-		storeSer.deleteByStoreId(storeId);
-	}
+	/*
+	 * @DeleteMapping("/{storeId}") public void deleteById(@PathVariable int
+	 * storeId) { storeSer.deleteByStoreId(storeId); }
+	 */
 	
+	
+	  @DeleteMapping("/{storeId}")
+	  public ResponseEntity<ResponsDto> deleteById(@PathVariable int storeId)
+	  { 
+		  ResponsDto response = storeSer.deleteByStoreId(storeId);
+		  
+		 return new ResponseEntity<ResponsDto> (response, HttpStatus.OK ) ;
+	}
+	 
 	
 	
 	
